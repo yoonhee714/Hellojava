@@ -23,8 +23,8 @@ public class Main {
 			switch(menu) {
 			case 1: //도서 목록.
 				ArrayList<Book>list = dao.findAll(); //반환 : ArrayList<Book>
-				System.out.println("도서번호 도서명    저자   가격");
-				System.out.println("=======================");
+				System.out.println("도서번호   도서명    저자   가격");
+				System.out.println("=========================");
 				for(int i=0; i<list.size(); i++) {
 					System.out.println(list.get(i).getId()
 							    +""+list.get(i).getTitle()
@@ -32,6 +32,35 @@ public class Main {
 							    +""+list.get(i).getPrice()
 							);
 				}//end of for.
+				break;
+			case 2: //도서 등록,
+				System.out.println("도서번호>>");
+				int bno =scn.nextInt();scn.nextLine(); // 1003 엔터; 반환값이 int.
+				System.out.println("도서제목>>");
+				String title = scn.nextLine(); //반환값이 String
+				System.out.println("도서저자>>");
+				String author = scn.nextLine();
+				System.out.println("도서가격>>");
+				int price = scn.nextInt();scn.nextLine();//반환값이 int
+				
+				Book book = new Book(bno, title, author, price);
+				if(dao.insert(book)) {
+					System.out.println("정상등록");
+				}else {
+					System.out.println("등록 중 오류");
+				}
+				break;
+			case 3: //수정
+				System.out.println("도서번호>>");
+				bno =scn.nextInt();scn.nextLine();
+				System.out.println("도서가격>>");
+				price = scn.nextInt();scn.nextLine();
+				
+				if(dao.update(bno, price)) {
+					System.out.println("정상 수정");
+				}else {
+					System.out.println("등록 중 오류");
+				}
 				break;
 			case 9: //종료
 				run = false;
