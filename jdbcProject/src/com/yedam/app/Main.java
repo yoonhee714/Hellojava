@@ -43,7 +43,7 @@ public class Main {
 				System.out.println("도서가격>>");
 				int price = scn.nextInt();scn.nextLine();//반환값이 int
 				
-				Book book = new Book(bno, title, author, price);
+				Book book = new Book(bno, title, author, title, title, price);
 				if(dao.insert(book)) {
 					System.out.println("정상등록");
 				}else {
