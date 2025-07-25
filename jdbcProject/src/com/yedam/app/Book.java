@@ -5,7 +5,6 @@ public class Book {
 	private String title;
 	private String author;
 	private String library;
-	private String isbn;
 	private int price;
 	//생성자
 	public Book() {};
@@ -16,7 +15,6 @@ public class Book {
 		this.title = title;
 		this.author = author;
 		this.library = library;
-		this.isbn = isbn;
 		this.price = price;
 	}
 	// getter, setter 생성
@@ -43,12 +41,6 @@ public class Book {
 	}
 	public void setLibrary(String library) {
 		this.library = library;
-	}
-	public String getisbn() {
-		return isbn;
-	}
-	public void setIsbn(String Isbn) {
-		this.isbn = isbn;
 	}
 	public int getPrice() {
 		return price;

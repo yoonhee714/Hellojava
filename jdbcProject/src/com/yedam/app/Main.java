@@ -11,6 +11,13 @@ public class Main {
 		boolean run = true; //반복조건에 사용,
 		Scanner scn = new Scanner(System.in);
 		BookDAO dao = new BookDAO(); //조회
+		
+		System.out.print("아이디를 입력하세요(관리자): ");
+		String id = scn.nextLine();
+		System.out.print("비밀번호를 입력하세요: ");
+		String pw = scn.nextLine();
+		System.out.println("로그인 완료!");
+		
 		while(run) {
 			System.out.println("\n도서 관리 시스템");
 			System.out.println("1. 도서목록");
@@ -62,6 +69,7 @@ public class Main {
 					System.out.println("등록 중 오류");
 				}
 				break;
+			case 4: //삭제	
 			case 9: //종료
 				run = false;
 			}//end switch
